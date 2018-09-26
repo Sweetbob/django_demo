@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Write A New Article By Totally Brand New Blog Web Site</title>
+</head>
+<body>
+    <form action="/testblog/article/finish/" method="post">
+        <!-- following line to restrict visiting from other website -->
+        {% csrf_token %}
+            <!-- double '{ ' to contain the variable you want to display on the page-->
+            <input type="hidden" name="id" value="{{ article.id | default:'0' }}">
+            <label><input type="text" name="title" value="{{ article.title }}"></label><br/><br/>
+            <label><textarea name="content">{{ article.content }}</textarea></label><br/><br/>
+            <input type="submit" value="Done">
+    </form>
+</body>
+</html>

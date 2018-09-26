@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+</head>
+<body>
+    <!-- for tag to iterate a list or other collection -->
+    {% for a in articles %}
+        <a href="/testblog/article/{{ a.id }}">{{ a.title }}</a> <br/>
+    {% endfor %}
+    <h4><a href="/testblog/article/edit/0">Write A New Article</a></h4>
+</body>
+</html>
